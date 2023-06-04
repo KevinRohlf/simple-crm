@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 export class UserComponent implements OnInit {
   user = new User();
   birthDate: Date;
-  firestore: Firestore = inject(Firestore)
+  firestore: Firestore = inject(Firestore);
   users$: Observable<any>;
   allUsers;
 
@@ -27,10 +27,8 @@ export class UserComponent implements OnInit {
     this.users$ = collectionData(itemCollection, { idField: 'id' });
 
     this.users$.subscribe((newUsers) => {
-      console.log('New users are:', newUsers)
       this.allUsers = newUsers;
     });
-    console.log(this.allUsers)
 
   }
   

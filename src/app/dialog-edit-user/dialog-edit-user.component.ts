@@ -10,7 +10,7 @@ import { User } from 'src/models/user.class';
 })
 export class DialogEditUserComponent implements OnInit {
   firestore: Firestore = inject(Firestore);
-  user: User;
+  user: User = new User();
   userId: string;
   loading = false;
   birthDate: Date;
